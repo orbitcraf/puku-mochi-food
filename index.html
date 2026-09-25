@@ -3,99 +3,107 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#c92332">
+  <meta name="theme-color" content="#f7c95c">
   <meta name="description" content="ぷくともちが横浜中華街でおいしいものに出会う、全11ページのスマホ向けWeb絵本です。">
-  <title>ぷくともちの食べ歩き｜第1話 横浜中華街</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='15' width='64' height='64' fill='%23c92332'/%3E%3Cpath d='M11 17h42v6H11zm5 10h32v22H16z' fill='%23f7c94a'/%3E%3Ccircle cx='32' cy='38' r='8' fill='%23fff3d0'/%3E%3Cpath d='M32 29c-5 0-9 4-9 9h18c0-5-4-9-9-9Z' fill='%23fff'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=food-story-1">
+  <title>ぷくともちの 食べ歩き｜横浜中華街</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='15' width='64' height='64' fill='%23f7c95c'/%3E%3Ccircle cx='32' cy='34' r='19' fill='%23fff8df' stroke='%231c285c' stroke-width='4'/%3E%3Cpath d='M21 33c2-10 20-10 22 0' fill='none' stroke='%23dc4a65' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=storybook-2">
 </head>
 <body>
   <a class="skip-link" href="#book-controls">ページ送りへ移動</a>
-  <div class="lanterns" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-
-  <main class="book" id="book-app" aria-label="デジタル絵本 ぷくともちの食べ歩き 第1話 横浜中華街">
-    <div class="book__topline" aria-hidden="true">
-      <span>PUKU &amp; MOCHI</span><i></i><span>FOOD WALK · 01</span>
-    </div>
-
-    <div class="book__viewport" id="book-viewport">
-      <article class="page page--opening is-active" data-page-id="arrival" aria-hidden="false">
-        <div class="page__art">
-          <img src="assets/food-story-01.png" alt="横浜中華街の華やかな門の前に到着したぷくともち">
-          <div class="opening-title">
-            <p><span>ぷく</span>と<span>もち</span>の</p>
+  <div class="book-stage">
+    <main class="book storybook" id="book-app" aria-label="デジタル絵本 ぷくともちの食べ歩き 横浜中華街">
+      <div class="book__viewport book-viewport" id="book-viewport">
+        <article class="page book-page book-page--cover is-active" data-page-id="arrival" aria-hidden="false">
+          <img class="cover-art" src="assets/food-story-01.png" alt="横浜中華街の華やかな門の前に到着したぷくともち">
+          <div class="cover-shade" aria-hidden="true"></div>
+          <div class="cover-copy">
+            <p class="cover-eyebrow"><span>ぷく</span><i>と</i><span>もち</span><i>の</i></p>
             <h1 data-page-title tabindex="-1">食べ歩き</h1>
-            <div><b>第1話</b><strong>横浜中華街</strong></div>
+            <p>横浜中華街へ、<br>ふたりで しゅっぱつ！</p>
+            <button class="wood-button" type="button" data-go-next>ほんを ひらく <span aria-hidden="true">→</span></button>
           </div>
-        </div>
-        <div class="page__story">
-          <div class="story-number">01</div>
-          <p class="story-kicker">よこはま ちゅうかがい</p>
-          <h2>とうちゃく！</h2>
-          <p>赤い門をくぐったら、<br>わくわくの町が はじまります。</p>
-          <p class="dialogue"><b>ぷく</b>「なにから たべよう？」<br><b>もち</b>「ゆっくり みていこうね」</p>
-          <button class="start-button" type="button" data-go-next>おいしい旅へ <span aria-hidden="true">→</span></button>
-        </div>
-      </article>
+          <p class="swipe-hint" aria-hidden="true">スワイプでも めくれるよ　→</p>
+        </article>
 
-      <article class="page" data-page-id="scent" aria-hidden="true" inert>
-        <div class="page__art"><img src="assets/food-story-02.png" alt="中華街の通りでおいしそうな匂いに気づくぷくともち" loading="lazy"><span class="steam steam--one" aria-hidden="true"></span><span class="steam steam--two" aria-hidden="true"></span></div>
-        <div class="page__story"><div class="story-number">02</div><p class="story-kicker">いい におい</p><h2 data-page-title tabindex="-1">くんくん、ふわ〜ん</h2><p>せいろから のぼる湯気が、<br>ふたりの鼻を くすぐります。</p><p class="dialogue"><b>ぷく</b>「あっちからだ！」<br><b>もち</b>「おなかが ないたよ」</p></div>
-      </article>
+        <article class="page book-page" data-page-id="scent" aria-hidden="true" inert>
+          <div class="book-spread">
+            <div class="illustration-leaf"><img src="assets/food-story-02.png" alt="中華街の通りでおいしそうな匂いに気づくぷくともち" loading="lazy"></div>
+            <div class="story-leaf"><p class="scene-label">いい におい</p><h2 data-page-title tabindex="-1">くんくん、<br>ふわ〜ん</h2><p>せいろから のぼる湯気が、<br>ふたりの鼻を くすぐります。</p><p class="character-note"><b>ぷく</b>「あっちからだ！」<br><b>もち</b>「おなかが ないたよ」</p></div>
+          </div>
+        </article>
 
-      <article class="page" data-page-id="nikuman" aria-hidden="true" inert>
-        <div class="page__art"><img src="assets/food-story-03.png" alt="湯気の立つ大きな肉まんを見つけたぷくともち" loading="lazy"></div>
-        <div class="page__story"><div class="story-number">03</div><p class="story-kicker">にくまん</p><h2 data-page-title tabindex="-1">まっしろ ふかふか！</h2><p>せいろの中に、<br>まんまる大きな 肉まんを発見。</p><p class="sound-word" aria-hidden="true">ほかほか　ふっくら</p></div>
-      </article>
+        <article class="page book-page" data-page-id="nikuman" aria-hidden="true" inert>
+          <div class="book-spread book-spread--reverse">
+            <div class="illustration-leaf"><img src="assets/food-story-03.png" alt="湯気の立つ大きな肉まんを見つけたぷくともち" loading="lazy"></div>
+            <div class="story-leaf"><p class="scene-label">にくまん</p><h2 data-page-title tabindex="-1">まっしろ ふかふか！</h2><p>せいろの中に、<br>まんまる大きな 肉まんを発見。</p><p class="sound-word" aria-hidden="true">ほかほか　ふっくら</p></div>
+          </div>
+        </article>
 
-      <article class="page" data-page-id="hot" aria-hidden="true" inert>
-        <div class="page__art"><img src="assets/food-story-04.png" alt="熱い肉まんを食べて驚くぷくと、飲み物を差し出すもち" loading="lazy"><span class="comic-mark" aria-hidden="true">!</span></div>
-        <div class="page__story"><div class="story-number">04</div><p class="story-kicker">できたて</p><h2 data-page-title tabindex="-1">あちちちち！</h2><p>ぱくっと食べた ぷくのほっぺが、<br>あっという間に まっかっか。</p><p class="dialogue"><b>もち</b>「ふうふう してからね」<br><b>ぷく</b>「でも、おいしい！」</p></div>
-      </article>
+        <article class="page book-page" data-page-id="hot" aria-hidden="true" inert>
+          <div class="book-spread">
+            <div class="illustration-leaf"><img src="assets/food-story-04.png" alt="熱い肉まんを食べて驚くぷくと、飲み物を差し出すもち" loading="lazy"></div>
+            <div class="story-leaf"><p class="scene-label">できたて</p><h2 data-page-title tabindex="-1">あちちちち！</h2><p>ぱくっと食べた ぷくのほっぺが、<br>あっという間に まっかっか。</p><p class="character-note"><b>もち</b>「ふうふう してからね」<br><b>ぷく</b>「でも、おいしい！」</p></div>
+          </div>
+        </article>
 
-      <article class="page" data-page-id="xiaolongbao" aria-hidden="true" inert>
-        <div class="page__art"><img src="assets/food-story-05.png" alt="小さなスプーンで小籠包を冷ましながら食べるぷくともち" loading="lazy"></div>
-        <div class="page__story"><div class="story-number">05</div><p class="story-kicker">しょうろんぽう</p><h2 data-page-title tabindex="-1">ふうふう、そーっと</h2><p>ちいさな皮の中には、<br>あったかスープが たっぷり。</p><p class="sound-word" aria-hidden="true">ふう〜　じゅわっ</p></div>
-      </article>
+        <article class="page book-page" data-page-id="xiaolongbao" aria-hidden="true" inert>
+          <div class="book-spread book-spread--reverse">
+            <div class="illustration-leaf"><img src="assets/food-story-05.png" alt="小さなスプーンで小籠包を冷ましながら食べるぷくともち" loading="lazy"></div>
+            <div class="story-leaf"><p class="scene-label">しょうろんぽう</p><h2 data-page-title tabindex="-1">ふうふう、そーっと</h2><p>ちいさな皮の中には、<br>あったかスープが たっぷり。</p><p class="sound-word" aria-hidden="true">ふう〜　じゅわっ</p></div>
+          </div>
+        </article>
 
-      <article class="page" data-page-id="fried-dumpling" aria-hidden="true" inert>
-        <div class="page__art"><img src="assets/food-story-06.png" alt="焼き小籠包を半分ずつ分け合うぷくともち" loading="lazy"></div>
-        <div class="page__story"><div class="story-number">06</div><p class="story-kicker">やき しょうろんぽう</p><h2 data-page-title tabindex="-1">はんぶんこ！</h2><p>カリッと焼けた 小籠包。<br>ふたりで分けると もっとおいしい。</p><p class="dialogue"><b>ぷく</b>「おんなじ おおきさ！」<br><b>もち</b>「いっしょに いただきます」</p></div>
-      </article>
+        <article class="page book-page" data-page-id="fried-dumpling" aria-hidden="true" inert>
+          <div class="book-spread">
+            <div class="illustration-leaf"><img src="assets/food-story-06.png" alt="焼き小籠包を半分ずつ分け合うぷくともち" loading="lazy"></div>
+            <div class="story-leaf"><p class="scene-label">やき しょうろんぽう</p><h2 data-page-title tabindex="-1">はんぶんこ！</h2><p>カリッと焼けた 小籠包。<br>ふたりで分けると もっとおいしい。</p><p class="character-note"><b>ぷく</b>「おんなじ おおきさ！」<br><b>もち</b>「いっしょに いただきます」</p></div>
+          </div>
+        </article>
 
-      <article class="page" data-page-id="sesame-balls" aria-hidden="true" inert>
-        <div class="page__art"><img src="assets/food-story-07.png" alt="山盛りのごま団子を見つけて目を輝かせるぷくともち" loading="lazy"><span class="sparkle sparkle--one" aria-hidden="true">✦</span><span class="sparkle sparkle--two" aria-hidden="true">✧</span></div>
-        <div class="page__story"><div class="story-number">07</div><p class="story-kicker">ごま だんご</p><h2 data-page-title tabindex="-1">きんいろ ころころ！</h2><p>ごまをまとった まるいおやつが、<br>おひさまみたいに ぴっかぴか。</p><p class="dialogue"><b>ぷく</b>「これも ひとつ！」<br><b>もち</b>「ほんとうに ひとつ？」</p></div>
-      </article>
+        <article class="page book-page" data-page-id="sesame-balls" aria-hidden="true" inert>
+          <div class="book-spread book-spread--reverse">
+            <div class="illustration-leaf"><img src="assets/food-story-07.png" alt="山盛りのごま団子を見つけて目を輝かせるぷくともち" loading="lazy"></div>
+            <div class="story-leaf"><p class="scene-label">ごま だんご</p><h2 data-page-title tabindex="-1">きんいろ ころころ！</h2><p>ごまをまとった まるいおやつが、<br>おひさまみたいに ぴっかぴか。</p><p class="character-note"><b>ぷく</b>「これも ひとつ！」<br><b>もち</b>「ほんとうに ひとつ？」</p></div>
+          </div>
+        </article>
 
-      <article class="page" data-page-id="full" aria-hidden="true" inert>
-        <div class="page__art"><img src="assets/food-story-08.png" alt="食べすぎてベンチでお腹をなでるぷくともち" loading="lazy"></div>
-        <div class="page__story"><div class="story-number">08</div><p class="story-kicker">おなか いっぱい</p><h2 data-page-title tabindex="-1">もう うごけない〜</h2><p>おいしいものを たべすぎて、<br>ふたりのおなかは ぽんぽこりん。</p><p class="sound-word" aria-hidden="true">ふう〜　まんぞく</p></div>
-      </article>
+        <article class="page book-page" data-page-id="full" aria-hidden="true" inert>
+          <div class="book-spread">
+            <div class="illustration-leaf"><img src="assets/food-story-08.png" alt="食べすぎてベンチでお腹をなでるぷくともち" loading="lazy"></div>
+            <div class="story-leaf"><p class="scene-label">おなか いっぱい</p><h2 data-page-title tabindex="-1">もう うごけない〜</h2><p>おいしいものを たべすぎて、<br>ふたりのおなかは ぽんぽこりん。</p><p class="sound-word" aria-hidden="true">ふう〜　まんぞく</p></div>
+          </div>
+        </article>
 
-      <article class="page" data-page-id="stroll" aria-hidden="true" inert>
-        <div class="page__art"><img src="assets/food-story-09.png" alt="提灯が並ぶ中華街をゆっくり散歩するぷくともち" loading="lazy"></div>
-        <div class="page__story"><div class="story-number">09</div><p class="story-kicker">まちを おさんぽ</p><h2 data-page-title tabindex="-1">てくてく ぶらぶら</h2><p>赤い提灯の下を、<br>おなかを休めながら 歩きます。</p><p class="dialogue"><b>ぷく</b>「まだ いいにおい！」<br><b>もち</b>「つぎの楽しみに しよう」</p></div>
-      </article>
+        <article class="page book-page" data-page-id="stroll" aria-hidden="true" inert>
+          <div class="book-spread book-spread--reverse">
+            <div class="illustration-leaf"><img src="assets/food-story-09.png" alt="提灯が並ぶ中華街をゆっくり散歩するぷくともち" loading="lazy"></div>
+            <div class="story-leaf"><p class="scene-label">まちを おさんぽ</p><h2 data-page-title tabindex="-1">てくてく ぶらぶら</h2><p>赤い提灯の下を、<br>おなかを休めながら 歩きます。</p><p class="character-note"><b>ぷく</b>「まだ いいにおい！」<br><b>もち</b>「つぎの楽しみに しよう」</p></div>
+          </div>
+        </article>
 
-      <article class="page" data-page-id="yamashita-park" aria-hidden="true" inert>
-        <div class="page__art"><img src="assets/food-story-10.png" alt="山下公園の芝生から横浜港を眺めて休むぷくともち" loading="lazy"></div>
-        <div class="page__story"><div class="story-number">10</div><p class="story-kicker">やました こうえん</p><h2 data-page-title tabindex="-1">うみかぜ ひとやすみ</h2><p>きらきらの港を見ながら、<br>芝生に ごろん。</p><p class="dialogue"><b>ぷく</b>「ふね、おおきいね！」<br><b>もち</b>「かぜも おいしいね」</p></div>
-      </article>
+        <article class="page book-page" data-page-id="yamashita-park" aria-hidden="true" inert>
+          <div class="book-spread">
+            <div class="illustration-leaf"><img src="assets/food-story-10.png" alt="山下公園の芝生から横浜港を眺めて休むぷくともち" loading="lazy"></div>
+            <div class="story-leaf"><p class="scene-label">やました こうえん</p><h2 data-page-title tabindex="-1">うみかぜ ひとやすみ</h2><p>きらきらの港を見ながら、<br>芝生に ごろん。</p><p class="character-note"><b>ぷく</b>「ふね、おおきいね！」<br><b>もち</b>「かぜも おいしいね」</p></div>
+          </div>
+        </article>
 
-      <article class="page page--ending" data-page-id="sunset" aria-hidden="true" inert>
-        <div class="page__art"><img src="assets/food-story-11.png" alt="夕暮れの横浜港で並んで座り、また来ようと約束するぷくともち" loading="lazy"><div class="ending-glow" aria-hidden="true"></div></div>
-        <div class="page__story"><div class="story-number">11</div><p class="story-kicker">ゆうぐれ</p><h2 data-page-title tabindex="-1">また食べにこようね</h2><p>夕日が港を そめるころ、<br>ふたりは 次のおいしい約束。</p><p class="dialogue"><b>ぷく</b>「こんどは なに食べる？」<br><b>もち</b>「また いっしょに探そうね」</p><button class="restart-button" type="button" data-go-page="arrival">さいしょから <span aria-hidden="true">↺</span></button></div>
-      </article>
-    </div>
+        <article class="page book-page book-page--ending" data-page-id="sunset" aria-hidden="true" inert>
+          <img class="ending-art" src="assets/food-story-11.png" alt="夕暮れの横浜港で並んで座り、また来ようと約束するぷくともち" loading="lazy">
+          <div class="ending-shade" aria-hidden="true"></div>
+          <div class="ending-copy"><p>ごちそうさまの 夕暮れ。</p><h2 data-page-title tabindex="-1"><span>また食べに</span><span>こようね</span></h2><button class="paper-button" type="button" data-go-page="arrival">さいしょから ↺</button></div>
+        </article>
+      </div>
 
-    <nav class="book-controls" id="book-controls" aria-label="絵本のページ送り">
-      <button class="page-button page-button--prev" id="page-prev" type="button"><span aria-hidden="true">←</span><span>前へ</span></button>
-      <div class="page-progress"><span id="page-status" aria-live="polite"><b>1</b> / 11</span><span class="page-dots" id="page-dots" aria-label="ページを選ぶ"></span></div>
-      <button class="page-button page-button--next" id="page-next" type="button"><span>次へ</span><span aria-hidden="true">→</span></button>
-    </nav>
-    <p class="sr-only" id="page-announcement" aria-live="polite"></p>
-  </main>
-  <script src="app.js?v=food-story-1"></script>
+      <nav class="book-controls" id="book-controls" aria-label="絵本のページ送り">
+        <button class="page-button page-button--prev" id="page-prev" type="button"><span aria-hidden="true">←</span> 前へ</button>
+        <div class="page-progress"><span id="page-status" aria-live="polite"><b>1</b> / 11</span><span class="page-dots" id="page-dots" aria-label="ページを選ぶ"></span></div>
+        <button class="page-button page-button--next" id="page-next" type="button">次へ <span aria-hidden="true">→</span></button>
+      </nav>
+      <p class="sr-only" id="page-announcement" aria-live="polite"></p>
+    </main>
+  </div>
+  <script src="app.js?v=storybook-2"></script>
 </body>
 </html>

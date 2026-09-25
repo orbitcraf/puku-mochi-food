@@ -33,7 +33,7 @@ try {
   errors.push(`JavaScript構文エラー: ${error.message}`);
 }
 
-if (!css.includes("@media (max-width: 760px)")) errors.push("スマートフォン向けCSSがありません");
+if (!/@media\s*\(max-width:\s*(?:760|820)px\)/.test(css)) errors.push("スマートフォン向けCSSがありません");
 if (!css.includes("prefers-reduced-motion")) errors.push("動きを抑える設定がありません");
 
 if (errors.length) {
