@@ -61,8 +61,8 @@ function updateControls() {
   previousButton.disabled = currentPage === 0;
   nextButton.disabled = currentPage === pages.length - 1;
   pageStatus.innerHTML = `<b>${currentPage + 1}</b> / ${pages.length}`;
-  previousButton.setAttribute("aria-label", currentPage ? `前のページ、${titleFor(pages[currentPage - 1])}へ` : "前のページはありません");
-  nextButton.setAttribute("aria-label", currentPage < pages.length - 1 ? `次のページ、${titleFor(pages[currentPage + 1])}へ` : "次のページはありません");
+  previousButton.setAttribute("aria-label", currentPage ? `まえの ページ、${titleFor(pages[currentPage - 1])}へ` : "まえの ページは ありません");
+  nextButton.setAttribute("aria-label", currentPage < pages.length - 1 ? `つぎの ページ、${titleFor(pages[currentPage + 1])}へ` : "つぎの ページは ありません");
   [...pageDots.children].forEach((dot, index) => {
     const active = index === currentPage;
     dot.classList.toggle("is-current", active);

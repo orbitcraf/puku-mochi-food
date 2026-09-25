@@ -181,7 +181,8 @@ img { display: block; max-width: 100%; -webkit-user-drag: none; user-select: non
 .swipe-hint { position: absolute; z-index: 4; right: 28px; bottom: 18px; margin: 0; color: white; font-size: .85rem; font-weight: 900; text-shadow: 0 2px var(--navy); }
 
 /* Picture-book spreads */
-.book-spread { display: grid; grid-template-columns: 1fr 1fr; height: 100%; background: var(--paper); }
+.book-spread { display: grid; grid-template-columns: minmax(0, 68fr) minmax(0, 32fr); height: 100%; background: var(--paper); }
+.book-spread--reverse { grid-template-columns: minmax(0, 32fr) minmax(0, 68fr); }
 .illustration-leaf { position: relative; min-width: 0; overflow: hidden; background: #f7d174; }
 .illustration-leaf > img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 1.2s ease; }
 .is-active .illustration-leaf > img { transform: scale(1.018); }
@@ -193,7 +194,7 @@ img { display: block; max-width: 100%; -webkit-user-drag: none; user-select: non
   flex-direction: column;
   justify-content: center;
   min-width: 0;
-  padding: clamp(34px, 6vw, 88px);
+  padding: clamp(28px, 4vw, 54px);
   overflow: hidden;
   background:
     radial-gradient(circle at 90% 12%, rgba(255,224,93,.35) 0 62px, transparent 64px),
@@ -320,7 +321,7 @@ img { display: block; max-width: 100%; -webkit-user-drag: none; user-select: non
   .book-page.is-leaving-next { animation-name: mobile-out-next; transform-origin: center; }
   .book-page.is-entering-previous { animation-name: mobile-in-prev; transform-origin: center; }
   .book-page.is-leaving-previous { animation-name: mobile-out-prev; transform-origin: center; }
-  .book-spread { width: 100%; min-width: 0; max-width: 100%; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 58%) minmax(0, 42%); overflow: hidden; }
+  .book-spread { width: 100%; min-width: 0; max-width: 100%; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 52%) minmax(0, 48%); overflow: hidden; }
   .book-spread .illustration-leaf, .book-spread--reverse .illustration-leaf { order: 1; }
   .book-spread .story-leaf, .book-spread--reverse .story-leaf { order: 2; }
   .illustration-leaf, .story-leaf { width: 100%; min-width: 0; max-width: 100%; }
@@ -332,13 +333,14 @@ img { display: block; max-width: 100%; -webkit-user-drag: none; user-select: non
   .story-leaf > p:not(.scene-label) { font-size: clamp(.88rem, 3.4vw, 1.05rem); line-height: 1.55; }
   .character-note { margin-top: 9px !important; padding: 6px 10px; border-left-width: 4px; font-size: .82rem !important; }
   .sound-word { margin-top: 10px !important; font-size: 1.25rem !important; }
-  .cover-art { object-position: 60% center; }
+  .cover-art, .ending-art { top: 7%; bottom: auto; height: 86%; }
+  .cover-art { object-position: 38% center; }
   .cover-shade { background: linear-gradient(180deg, rgba(118,31,57,.78), transparent 68%), linear-gradient(90deg, rgba(106,27,52,.38), transparent 78%); }
   .cover-copy { left: 20px; right: 20px; top: 11%; width: auto; transform: none; }
   .cover-copy h1 { font-size: clamp(3.8rem, 18vw, 6.2rem); }
   .cover-copy > p:last-of-type { margin: 20px 0 18px 3px; }
   .swipe-hint { bottom: 12px; right: 14px; }
-  .ending-art { object-position: 67% center; }
+  .ending-art { object-position: 77% center; }
   .ending-shade { background: linear-gradient(0deg, rgba(38,30,91,.84), transparent 72%); }
   .ending-copy { left: 22px; right: 22px; top: auto; bottom: 7%; transform: none; }
   .ending-copy h2 { font-size: clamp(2.6rem, 12vw, 4.2rem); }
@@ -359,7 +361,7 @@ img { display: block; max-width: 100%; -webkit-user-drag: none; user-select: non
   .page-button { width: min(100%, 92px); min-height: 44px; padding: 3px 9px; border-radius: 13px; box-shadow: 0 3px var(--navy); font-size: .82rem; }
   .page-progress { min-width: 76px; }
   #page-status { padding: 0 7px; font-size: .76rem; }
-  .book-spread { grid-template-rows: minmax(0, 56%) minmax(0, 44%); }
+  .book-spread { grid-template-rows: minmax(0, 50%) minmax(0, 50%); }
   .story-leaf { padding: 13px 17px 11px; }
   .scene-label { margin-bottom: 4px; padding: 1px 8px; font-size: .68rem; }
   .story-leaf h2 { margin-bottom: 5px; font-size: clamp(1.4rem, 5.8vw, 2.05rem); }

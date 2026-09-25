@@ -15,6 +15,10 @@ for (const required of ["page-prev", "page-next", "page-status", "page-dots", "b
   if (!html.includes(`id="${required}"`)) errors.push(`必要なUIがありません: #${required}`);
 }
 
+for (const label of ["ほんを ひらく", "まえへ", "つぎへ", "おもいでを みる", "さいしょから ↻"]) {
+  if (!html.includes(label)) errors.push(`規格の文言がありません: ${label}`);
+}
+
 const refs = [...html.matchAll(/(?:src|href)="([^"#?]+)(?:\?[^"]*)?"/g)]
   .map((match) => match[1])
   .filter((ref) => !ref.startsWith("data:") && !ref.startsWith("http"));
@@ -37,6 +41,7 @@ if (!/@media\s*\(max-width:\s*(?:760|820)px\)/.test(css)) errors.push("スマー
 if (!css.includes("prefers-reduced-motion")) errors.push("動きを抑える設定がありません");
 if ((html.match(/class="memory-card"/g) || []).length !== 6) errors.push("おもいでカードが6枚ではありません");
 if (/\b(?:Audio|audio|BGM|bgm)\b|おと\s*(?:ON|OFF)/.test(`${html}\n${js}`)) errors.push("音機能に関する実装が残っています");
+if (/[一-龠々〆ヶ]/.test(`${html}\n${js}`)) errors.push("表示文言に漢字が残っています");
 
 if (errors.length) {
   console.error(errors.join("\n"));
