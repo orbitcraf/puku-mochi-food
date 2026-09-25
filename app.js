@@ -7,11 +7,16 @@ const nextButton = document.getElementById("page-next");
 const pageStatus = document.getElementById("page-status");
 const pageDots = document.getElementById("page-dots");
 const pageAnnouncement = document.getElementById("page-announcement");
+const bookApp = document.getElementById("book-app");
+const memoriesDialog = document.getElementById("memories-dialog");
+const openMemoriesButton = document.getElementById("open-memories");
+const closeMemoriesButton = document.getElementById("close-memories");
 const pageIndexById = new Map(pages.map((page, index) => [page.dataset.pageId, index]));
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 let currentPage = 0;
 let transitionTimer = 0;
 let swipeStart = null;
+let memoriesReturnFocus = null;
 
 function titleFor(page) {
   return page.querySelector("[data-page-title]")?.textContent.trim() || "ページ";
@@ -74,6 +79,21 @@ function preloadNearby(index) {
   });
 }
 
+function openMemories() {
+  memoriesReturnFocus = document.activeElement;
+  memoriesDialog.hidden = false;
+  bookApp.inert = true;
+  document.body.classList.add("memories-open");
+  closeMemoriesButton.focus({ preventScroll: true });
+}
+
+function closeMemories({ restoreFocus = true } = {}) {
+  memoriesDialog.hidden = true;
+  bookApp.inert = false;
+  document.body.classList.remove("memories-open");
+  if (restoreFocus) memoriesReturnFocus?.focus({ preventScroll: true });
+}
+
 function initialize() {
   pageDots.replaceChildren(...pages.map((page, index) => {
     const button = document.createElement("button");
@@ -100,10 +120,26 @@ previousButton.addEventListener("click", () => setActivePage(currentPage - 1));
 nextButton.addEventListener("click", () => setActivePage(currentPage + 1));
 document.querySelectorAll("[data-go-next]").forEach((button) => button.addEventListener("click", () => setActivePage(currentPage + 1)));
 document.querySelectorAll("[data-go-page]").forEach((button) => button.addEventListener("click", () => setActivePage(pageIndexById.get(button.dataset.goPage))));
+openMemoriesButton.addEventListener("click", openMemories);
+closeMemoriesButton.addEventListener("click", () => closeMemories());
+memoriesDialog.addEventListener("click", (event) => {
+  if (event.target === memoriesDialog) closeMemories();
+});
+document.querySelectorAll("[data-memory-page]").forEach((button) => button.addEventListener("click", () => {
+  const index = pageIndexById.get(button.dataset.memoryPage);
+  closeMemories({ restoreFocus: false });
+  setActivePage(index);
+}));
 
 window.addEventListener("popstate", () => setActivePage(pageFromHash(), { updateHistory: false, focus: false }));
 window.addEventListener("hashchange", () => setActivePage(pageFromHash(), { updateHistory: false, focus: false }));
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !memoriesDialog.hidden) {
+    event.preventDefault();
+    closeMemories();
+    return;
+  }
+  if (!memoriesDialog.hidden) return;
   if (event.altKey || event.ctrlKey || event.metaKey) return;
   if (event.key === "ArrowRight") { event.preventDefault(); setActivePage(currentPage + 1); }
   if (event.key === "ArrowLeft") { event.preventDefault(); setActivePage(currentPage - 1); }

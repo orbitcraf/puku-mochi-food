@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f7c95c">
-  <meta name="description" content="ぷくともちが横浜中華街でおいしいものに出会う、全11ページのスマホ向けWeb絵本です。">
-  <title>ぷくともちの 食べ歩き｜横浜中華街</title>
+  <meta name="description" content="ぷくともちが横浜中華街でおいしいものに出会う、全11ページのかわいいWeb絵本です。">
+  <title>ぷくともちの たべあるき｜横浜中華街</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='15' width='64' height='64' fill='%23f7c95c'/%3E%3Ccircle cx='32' cy='34' r='19' fill='%23fff8df' stroke='%231c285c' stroke-width='4'/%3E%3Cpath d='M21 33c2-10 20-10 22 0' fill='none' stroke='%23dc4a65' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=storybook-2">
+  <link rel="stylesheet" href="styles.css?v=storybook-3">
 </head>
 <body>
   <a class="skip-link" href="#book-controls">ページ送りへ移動</a>
   <div class="book-stage">
-    <main class="book storybook" id="book-app" aria-label="デジタル絵本 ぷくともちの食べ歩き 横浜中華街">
+    <main class="book storybook" id="book-app" aria-label="デジタル絵本 ぷくともちの たべあるき 横浜中華街">
       <div class="book__viewport book-viewport" id="book-viewport">
         <article class="page book-page book-page--cover is-active" data-page-id="arrival" aria-hidden="false">
           <img class="cover-art" src="assets/food-story-01.png" alt="横浜中華街の華やかな門の前に到着したぷくともち">
           <div class="cover-shade" aria-hidden="true"></div>
           <div class="cover-copy">
             <p class="cover-eyebrow"><span>ぷく</span><i>と</i><span>もち</span><i>の</i></p>
-            <h1 data-page-title tabindex="-1">食べ歩き</h1>
+            <h1 data-page-title tabindex="-1">たべあるき</h1>
             <p>横浜中華街へ、<br>ふたりで しゅっぱつ！</p>
             <button class="wood-button" type="button" data-go-next>ほんを ひらく <span aria-hidden="true">→</span></button>
           </div>
@@ -92,7 +92,14 @@
         <article class="page book-page book-page--ending" data-page-id="sunset" aria-hidden="true" inert>
           <img class="ending-art" src="assets/food-story-11.png" alt="夕暮れの横浜港で並んで座り、また来ようと約束するぷくともち" loading="lazy">
           <div class="ending-shade" aria-hidden="true"></div>
-          <div class="ending-copy"><p>ごちそうさまの 夕暮れ。</p><h2 data-page-title tabindex="-1"><span>また食べに</span><span>こようね</span></h2><button class="paper-button" type="button" data-go-page="arrival">さいしょから ↺</button></div>
+          <div class="ending-copy">
+            <p>ごちそうさまの 夕暮れ。</p>
+            <h2 data-page-title tabindex="-1"><span>また食べに</span><span>こようね</span></h2>
+            <div class="ending-actions">
+              <button class="paper-button paper-button--memory" id="open-memories" type="button">おもいでを みる</button>
+              <button class="paper-button" type="button" data-go-page="arrival">さいしょから ↺</button>
+            </div>
+          </div>
         </article>
       </div>
 
@@ -104,6 +111,25 @@
       <p class="sr-only" id="page-announcement" aria-live="polite"></p>
     </main>
   </div>
-  <script src="app.js?v=storybook-2"></script>
+
+  <section class="memories-dialog" id="memories-dialog" role="dialog" aria-modal="true" aria-labelledby="memories-title" hidden>
+    <div class="memories-panel">
+      <header class="memories-header">
+        <div><p>ぷくともちの たべあるき</p><h2 id="memories-title">おもいで</h2></div>
+        <button class="memories-close" id="close-memories" type="button" aria-label="おもいでを閉じる">×</button>
+      </header>
+      <p class="memories-lead">また見たい おもいでを えらんでね。</p>
+      <div class="memories-grid">
+        <button class="memory-card" type="button" data-memory-page="arrival"><img src="assets/food-story-01.png" alt="横浜中華街に到着した場面"><span>よこはま<br>ちゅうかがい</span></button>
+        <button class="memory-card" type="button" data-memory-page="nikuman"><img src="assets/food-story-03.png" alt="大きな肉まんを見つけた場面"><span>にくまん</span></button>
+        <button class="memory-card" type="button" data-memory-page="xiaolongbao"><img src="assets/food-story-05.png" alt="小籠包を食べる場面"><span>しょうろんぽう</span></button>
+        <button class="memory-card" type="button" data-memory-page="fried-dumpling"><img src="assets/food-story-06.png" alt="焼き小籠包を半分ずつ食べる場面"><span>やき<br>しょうろんぽう</span></button>
+        <button class="memory-card" type="button" data-memory-page="sesame-balls"><img src="assets/food-story-07.png" alt="ごま団子を見つけた場面"><span>ごま だんご</span></button>
+        <button class="memory-card" type="button" data-memory-page="yamashita-park"><img src="assets/food-story-10.png" alt="山下公園で休憩する場面"><span>やました<br>こうえん</span></button>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js?v=storybook-3"></script>
 </body>
 </html>

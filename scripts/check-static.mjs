@@ -11,7 +11,7 @@ const errors = [];
 const pageCount = (html.match(/<article class="page/g) || []).length;
 if (pageCount !== 11) errors.push(`ページ数が11ではありません: ${pageCount}`);
 
-for (const required of ["page-prev", "page-next", "page-status", "page-dots", "book-viewport"]) {
+for (const required of ["page-prev", "page-next", "page-status", "page-dots", "book-viewport", "open-memories", "memories-dialog", "close-memories"]) {
   if (!html.includes(`id="${required}"`)) errors.push(`必要なUIがありません: #${required}`);
 }
 
@@ -35,6 +35,8 @@ try {
 
 if (!/@media\s*\(max-width:\s*(?:760|820)px\)/.test(css)) errors.push("スマートフォン向けCSSがありません");
 if (!css.includes("prefers-reduced-motion")) errors.push("動きを抑える設定がありません");
+if ((html.match(/class="memory-card"/g) || []).length !== 6) errors.push("おもいでカードが6枚ではありません");
+if (/\b(?:Audio|audio|BGM|bgm)\b|おと\s*(?:ON|OFF)/.test(`${html}\n${js}`)) errors.push("音機能に関する実装が残っています");
 
 if (errors.length) {
   console.error(errors.join("\n"));
