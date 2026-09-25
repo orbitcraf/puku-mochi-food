@@ -35,6 +35,8 @@ img { display: block; max-width: 100%; -webkit-user-drag: none; user-select: non
 .skip-link { position: fixed; z-index: 999; top: 8px; left: 8px; padding: 8px 14px; transform: translateY(-160%); background: white; border: 3px solid var(--navy); border-radius: 12px; }
 .skip-link:focus { transform: none; }
 :focus-visible { outline: 5px solid var(--pink); outline-offset: 4px; }
+[data-page-title]:focus,
+[data-page-title]:focus-visible { outline: none; }
 
 .book-stage {
   min-height: 100vh;
